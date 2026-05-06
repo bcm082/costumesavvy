@@ -237,6 +237,9 @@ h1, h2, h3, h4 {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
 }
+.cards-grid--single {
+    grid-template-columns: minmax(0, 420px);
+}
 
 .card {
     background: var(--bg-card);
