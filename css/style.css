@@ -4,20 +4,20 @@
 
 /* --- Variables -------------------------------------------- */
 :root {
-    --bg:           #0b0609;
-    --bg-surface:   #140b0f;
-    --bg-card:      #1c1016;
-    --orange:       #e8771a;
-    --orange-light: #ff9a3c;
-    --purple:       #8b5cf6;
+    --bg:           #ffffff;
+    --bg-surface:   #faf6f7;
+    --bg-card:      #ffffff;
+    --orange:       #c9600a;
+    --orange-light: #e8771a;
+    --purple:       #7c3aed;
     --purple-dark:  #5b21b6;
     --purple-mid:   #6d28d9;
-    --text:         #f0e6eb;
-    --text-muted:   #9a8690;
-    --border:       #2c1c22;
+    --text:         #1c1215;
+    --text-muted:   #6b5862;
+    --border:       #ead9de;
     --radius:       8px;
-    --shadow-md:    0 4px 24px rgba(0, 0, 0, 0.45);
-    --shadow-lg:    0 8px 40px rgba(0, 0, 0, 0.6);
+    --shadow-md:    0 4px 24px rgba(0, 0, 0, 0.08);
+    --shadow-lg:    0 8px 40px rgba(0, 0, 0, 0.13);
     --max-w:        1100px;
 }
 
@@ -80,11 +80,12 @@ h1, h2, h3, h4 {
    HEADER / NAV
    ============================================================ */
 .site-header {
-    background: #080406;
+    background: #ffffff;
     border-bottom: 2px solid var(--orange);
     position: sticky;
     top: 0;
     z-index: 200;
+    box-shadow: 0 1px 12px rgba(0,0,0,0.06);
 }
 .site-header .container {
     display: flex;
@@ -112,7 +113,7 @@ h1, h2, h3, h4 {
     gap: 2rem;
 }
 .main-nav a {
-    color: #c8b8be;
+    color: #4a3840;
     font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: 0.06em;
@@ -137,22 +138,23 @@ h1, h2, h3, h4 {
    ============================================================ */
 .hero {
     position: relative;
-    background: linear-gradient(135deg, #0c0608 0%, #1c0d14 45%, #0e0b1c 100%);
+    background: linear-gradient(135deg, #fff8f0 0%, #fdf2f6 50%, #f5f0fe 100%);
     padding: 5.5rem 1.5rem 5rem;
     text-align: center;
     overflow: hidden;
+    border-bottom: 1px solid var(--border);
 }
 .hero-web {
     position: absolute;
-    opacity: 0.18;
+    opacity: 0.15;
     pointer-events: none;
 }
 .hero-web--tl { top: -10px; left: -10px; width: 180px; transform: rotate(180deg); }
 .hero-web--br { bottom: -10px; right: -10px; width: 180px; }
 .hero-eyebrow {
     display: inline-block;
-    background: var(--purple-dark);
-    color: #c4b5f4;
+    background: #ede9fe;
+    color: var(--purple-dark);
     font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.1em;
@@ -163,7 +165,7 @@ h1, h2, h3, h4 {
 }
 .hero h1 {
     font-size: clamp(2.1rem, 5vw, 3.4rem);
-    color: #fff;
+    color: var(--text);
     max-width: 760px;
     margin: 0 auto 1rem;
 }
@@ -189,16 +191,13 @@ h1, h2, h3, h4 {
     padding: 0.75rem 1rem;
     border-radius: var(--radius);
     border: 1px solid var(--border);
-    background: rgba(255,255,255,0.06);
+    background: #fff;
     color: var(--text);
     font-size: 0.9rem;
     outline: none;
-    transition: border-color 0.2s, background 0.2s;
+    transition: border-color 0.2s;
 }
-.signup-form input[type="email"]:focus {
-    border-color: var(--orange);
-    background: rgba(255,255,255,0.09);
-}
+.signup-form input[type="email"]:focus { border-color: var(--orange); }
 .signup-form input[type="email"]::placeholder { color: var(--text-muted); }
 .signup-note {
     font-size: 0.72rem;
@@ -257,13 +256,13 @@ h1, h2, h3, h4 {
 .card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
-    border-color: rgba(232, 119, 26, 0.5);
+    border-color: rgba(201, 96, 10, 0.4);
 }
 
 /* Card emoji image placeholder */
 .card-thumb {
     aspect-ratio: 16 / 9;
-    background: linear-gradient(135deg, #200e18 0%, #100d20 100%);
+    background: linear-gradient(135deg, #fde8f0 0%, #ede8fe 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -275,7 +274,7 @@ h1, h2, h3, h4 {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, transparent 40%, rgba(28, 16, 22, 0.85) 100%);
+    background: linear-gradient(to bottom, transparent 40%, rgba(255, 255, 255, 0.8) 100%);
 }
 
 .card-body {
@@ -319,7 +318,7 @@ h1, h2, h3, h4 {
    FOOTER
    ============================================================ */
 .site-footer {
-    background: #080406;
+    background: #faf6f7;
     border-top: 1px solid var(--border);
     padding: 3.5rem 1.5rem 1.5rem;
     margin-top: auto;
@@ -378,7 +377,7 @@ h1, h2, h3, h4 {
    PAGE HERO (about / article)
    ============================================================ */
 .page-hero {
-    background: linear-gradient(135deg, #0c0608 0%, #1c0d14 60%, #0e0b1c 100%);
+    background: linear-gradient(135deg, #fff8f0 0%, #fdf2f6 60%, #f5f0fe 100%);
     padding: 4rem 1.5rem 3.5rem;
     text-align: center;
     border-bottom: 1px solid var(--border);
@@ -442,8 +441,8 @@ h1, h2, h3, h4 {
 }
 
 .disclosure-box {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    background: #fff8f0;
+    border: 1px solid #f5d5b8;
     border-left: 4px solid var(--orange);
     border-radius: var(--radius);
     padding: 1.25rem 1.5rem;
@@ -482,14 +481,17 @@ h1, h2, h3, h4 {
 
 /* Costume recommendation cards */
 .costume-card {
-    background: var(--bg-card);
+    background: #faf6f7;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 1.5rem 1.6rem;
     margin: 1.75rem 0;
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
-.costume-card:hover { border-color: rgba(232, 119, 26, 0.45); }
+.costume-card:hover {
+    border-color: rgba(201, 96, 10, 0.4);
+    box-shadow: var(--shadow-md);
+}
 .costume-num {
     font-size: 0.7rem;
     font-weight: 800;
@@ -536,7 +538,7 @@ h1, h2, h3, h4 {
 .related-list li a {
     display: block;
     padding: 1rem 1.25rem;
-    background: var(--bg-card);
+    background: #faf6f7;
     border: 1px solid var(--border);
     border-radius: var(--radius);
     color: var(--text);
@@ -576,7 +578,7 @@ h1, h2, h3, h4 {
         top: 100%;
         left: 0;
         right: 0;
-        background: #080406;
+        background: #ffffff;
         border-top: 1px solid var(--border);
         border-bottom: 2px solid var(--orange);
         max-height: 0;
